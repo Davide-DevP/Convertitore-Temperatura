@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertitore Temperatura</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ConvertiTemp</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script>
         function gradi(){
             let temperatura = document.getElementById("temp").value;
@@ -35,53 +36,21 @@
         }
     </script>
 </head>
+
 <body>
-<form id="form">
-    <div class="container-fluid">
-        <div class="row justify-content-start">
-            <div class="col">
-                <h1 style="margin-top: 40px;">Convertitore di temperatura</h1>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="col">
-                <p style="margin-top: 30px;">Inserisci una temperatura e clicca il pulsante corrispondente per convertirla in gradi centigradi o Fahrenheit.</p>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <input type="number" min="0" id="temp" class="form-control" placeholder="Temperatura" aria-label="Temperatura" aria-describedby="basic-addon1">
-                </div>              
-            </div>
-            <div class="col">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-info" type="button" onclick="gradi();">Converti in °C</button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button" onclick="fahr();">Converti in °F</button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-danger" type="button" onclick="resetform();">Reset</button>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <p id="risultato"></p>
-        </div>
-    </div>
-</form>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script>
-    document.querySelector("#temp").addEventListener("keypress", function (evt) {
-    if ((evt.which < 48 || evt.which > 57) && evt.which != 46){
-            evt.preventDefault();
-        }
-    });
-</script>
+    <form id="form">
+        <h1 style="margin-top: 50px;">Convertitore di temperatura</h1>
+        <p style="margin-top: 24px;">Inserisci una temperatura e clicca il pulsante corrispondente per convertirla in gradi centigradi o Fahrenheit.<br></p><input type="number" id="temp" style="padding-right: 0px;margin-left: 7px;"><button onclick="gradi();" class="btn btn-primary text-center" type="button" style="background: var(--bs-cyan);border-color: rgb(255, 255, 255);">Converti in °C</button><button onclick="fahr();" class="btn btn-primary text-center" type="button" style="background: var(--bs-teal);border-color: rgb(255, 255, 255);">Converti in °F</button><button onclick="resetform();" class="btn btn-primary text-center" type="button" style="background: var(--bs-red);border-color: rgb(255, 255, 255);">Reset</button>
+        <p id="risultato"></p>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            document.querySelector("#temp").addEventListener("keypress", function (evt) {
+            if ((evt.which < 48 || evt.which > 57) && evt.which != 46){
+                    evt.preventDefault();
+                }
+            });
+        </script>
+    </form>
 </body>
+
 </html>
